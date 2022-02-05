@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-app.get(/p/, (req, res) => {
+app.get("/", (req, res) => {
 res.writeHead(200, {'Content-Type': 'text/html'});
 res.write('<script>var prompt = prompt("^^", "")</script>');
 res.write(`<script>
@@ -10,6 +10,6 @@ res.write(`<script>
 res.end();
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
 	console.log('Hello World!!');
 	});
